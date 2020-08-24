@@ -19,9 +19,5 @@
     "32": "images/close_wpp32.png",
     "48": "images/close_wpp48.png",
     "128": "images/close_wpp128.png"
-  },
-  "permissions": [
-    "https://web.whatsapp.com/", 
-    "activeTab"
-  ]
+  }
 }
