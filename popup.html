@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script async src="jquery-3.5.1.min.js"></script>
+    <script async src="content.js"></script>
     <style>
       body {
         border-radius: 18;
@@ -10,7 +12,7 @@
         align-items: center;
         justify-content: flex-start;
         width: 200px;
-        padding: 10px
+        padding: 10px;
       }
       p {
         color: white;
@@ -18,15 +20,38 @@
       h3 {
         color: white;
       }
+      label {
+        color: white;
+      }
       #version {
         font-size: 15;
+      }
+      #checkbox-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 30px;
+      }
+      #close-on-esc {
+        margin-right: 5px;
+        margin-left: -1px;
       }
     </style>
   </head>
   <body>
-      <img src="./images/close_wpp48.png" alt="extension icon">
-      <h3>Close Whatsapp Chat</h3>
-      <p>If the extension stops working, is probably because of a whatsapp update, and im surely going to fix it as soon as i can... Regards!</p>
-      <p id="version">v1.2 - nlazzos</p>
+    <img src="./images/close_wpp48.png" alt="extension icon" />
+    <h3>Close Whatsapp Chat</h3>
+
+    <!-- <div id="checkbox-container">
+      <input type="checkbox" id="close-on-esc" name="close-on-esc" />
+      <label for="close-on-esc">Close chat when pressing 'Esc'</label>
+    </div> -->
+
+    <p>
+      If the extension stops working, is probably because of a whatsapp update, and im surely going to fix it as soon as
+      i can... Regards!
+    </p>
+    <p id="version">v1.2 - nlazzos</p>
   </body>
 </html>

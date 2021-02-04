@@ -69,4 +69,38 @@ const reopenChat = () => {
   $(activeChatSelector).children().addClass(activeChatClass);
 };
 
-observer.observe(document.body, { childList: true, subtree: true, attributes: false, characterData: false });
+$(document).keyup(function (e) {
+  // escape key maps to keycode 27
+  if (e.key === "Escape") {
+    // close the chat on Esc key press
+    // const isEnabled = localStorage.getItem("close-on-esc");
+
+    closeChat();
+  }
+});
+
+// $(document).ready(function () {
+//   let isEnabled = localStorage.getItem("close-on-esc");
+
+//   if (!isEnabled) {
+//     isEnabled = "true";
+
+//     localStorage.setItem("close-on-esc", isEnabled);
+//   }
+
+//   $("#close-on-esc").prop("checked", isEnabled === "true" ? true : false);
+
+//   alert("adasdasds");
+//   $("#close-on-esc").change(function () {
+//     alert("adasdasds");
+//     localStorage.setItem("close-on-esc", this.checked);
+//     $(this).prop("checked", this.checked);
+//   });
+// });
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+  attributes: false,
+  characterData: false
+});
