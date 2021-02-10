@@ -6,6 +6,11 @@ const buttonPathSelector = `${closeButtonSelector} path`; // selector for the ta
 const activeChatSelector = '._1MZWu [aria-selected="true"]'; // list item for the active chat
 const activeChatClass = "_1GGbM"; // class that adds the selected style to the active chat list item
 
+const emojiWindowSelector = "._3Xjbn ._3Xjbn"; // window that pops up when press the emoji icon
+const mediaWindowSelector = "._38iEl"; // window that opens when watching an image or a video o to share a contact
+const rightDrawerSelector = ".i5ly3._299go .WnX2e ._38iEl"; // drawer that opens when searching in a chat or viewing a contact profile
+const attachIconsSelector = "._2wfYK.lpKIg"; // floating buttons that open when pressing the attach icon
+
 const closeButton = $.parseHTML(`
 <div class="_2wfYK">
     <button class="hYtwT" id="close-chat">
@@ -70,10 +75,18 @@ const reopenChat = () => {
 };
 
 $(document).keyup(function (e) {
-  // escape key maps to keycode 27
   if (e.key === "Escape") {
+    // escape key maps to keycode 27
     // close the chat on Esc key press
     // const isEnabled = localStorage.getItem("close-on-esc");
+
+    if ($(mediaWindowSelector).length) return;
+
+    if ($(rightDrawerSelector).length) return;
+
+    if ($(attachIconsSelector).length) return;
+
+    if ($(emojiWindowSelector).length) return;
 
     closeChat();
   }
