@@ -1,6 +1,6 @@
 {
   "name": "Close Whatsapp Chat",
-  "version": "1.4",
+  "version": "1.5",
   "description": "Allows you to close a chat on Whatsapp Web and return to the main screen that is shown with the app first load.",
   "manifest_version": 2,
   "content_scripts": [

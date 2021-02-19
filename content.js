@@ -58,17 +58,18 @@ const observer = new MutationObserver((mutations) => {
 });
 
 const closeChat = () => {
-  $(mainContainerSelector).children().prop("style", "z-index: -1;");
+  // $(mainContainerSelector).children().prop("style", "z-index: -1;");
 
   $(mainContainerSelector).prepend(mainScreen);
-  $(mainScreenSelector).prop("style", "z-index: 1;");
+  $(mainScreenSelector).prop("style", "z-index: 999999;");
 
   $(activeChatSelector).children().removeClass(activeChatClass);
   $(activeChatSelector).parent().click(reopenChat);
 };
 
 const reopenChat = () => {
-  $(mainContainerSelector).children().prop("style", "z-index: 1;");
+  // $(mainContainerSelector).children().prop("style", "z-index: 1;");
+
   $(mainScreenSelector).remove();
 
   $(activeChatSelector).children().addClass(activeChatClass);
