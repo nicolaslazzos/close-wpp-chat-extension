@@ -1,18 +1,20 @@
 const mainContainerSelector = "#main"; // first screen and chat screens container
-const mainScreenSelector = ".i5ly3._2l_Ww ._27KDP"; // the first screen when the app loads
-const buttonsSelector = "._1UuMR .chGSa.LhZF7"; // right buttons container
+const mainScreenSelector = "._1Flk2._1sFTb ._2zkCi"; // the first screen when the app loads
+const buttonsSelector = "._1IeOz ._1ljzS.pnYZD"; // right buttons container
+const buttonsClass = "_2n-zq"; // sets margin or padding to the button
 const closeButtonSelector = "#close-chat"; // custom selector setted by me in the html string
 const buttonPathSelector = `${closeButtonSelector} path`; // selector for the tag that handles the icon color
-const activeChatSelector = '._1MZWu [aria-selected="true"]'; // list item for the active chat
-const activeChatClass = "_1GGbM"; // class that adds the selected style to the active chat list item
+const activeChatSelector = '._2aBzC [aria-selected="true"]'; // list item for the active chat
+const activeChatClass = "_2GVnY"; // class that adds the selected style to the active chat list item
 
-const emojiWindowSelector = "._3Xjbn ._3Xjbn"; // window that pops up when press the emoji icon
-const mediaWindowSelector = "._38iEl"; // window that opens when watching an image or a video o to share a contact
-const rightDrawerSelector = ".i5ly3._299go .WnX2e ._38iEl"; // drawer that opens when searching in a chat or viewing a contact profile
-const attachIconsSelector = "._2wfYK.lpKIg"; // floating buttons that open when pressing the attach icon
+const emojiWindowSelector = "._1C2Q3 ._1C2Q3"; // window that pops up when press the emoji icon
+const mediaWindowSelector = "._1sMV6"; // window that opens when watching an image or a video
+const contactWindowSelector = "._1XTIr"; // window that opens when share a contact
+const rightDrawerSelector = "._1Flk2._3xysY ._2zn9Y ._1sMV6"; // drawer that opens when searching in a chat or viewing a contact profile
+const attachIconsSelector = "._3BZyX ._19rjv"; // floating buttons that open when pressing the attach icon
 
 const closeButton = $.parseHTML(`
-<div class="_2wfYK">
+<div class="${buttonsClass}">
     <button class="hYtwT" id="close-chat">
         <span data-testid="x" data-icon="x" class="">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -82,6 +84,8 @@ $(document).keyup(function (e) {
     // const isEnabled = localStorage.getItem("close-on-esc");
 
     if ($(mediaWindowSelector).length) return;
+
+    if ($(contactWindowSelector).length) return;
 
     if ($(rightDrawerSelector).length) return;
 
